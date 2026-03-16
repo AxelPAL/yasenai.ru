@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef } from "react";
-import type { StreamEvent, Message } from "@/lib/types";
+import type { StreamEvent } from "@/lib/types";
 
 interface UseStreamMessageResult {
   sendMessage: (text: string, chatId?: number) => Promise<{ chatId: number | null }>;

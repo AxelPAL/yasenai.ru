@@ -12,7 +12,7 @@ interface ChatLayoutProps {
 
 export function ChatLayout({ children }: ChatLayoutProps) {
   const router = useRouter();
-  const { chats, loading, createChat, deleteChat, renameChat } = useChats();
+  const { chats, loading, deleteChat, renameChat } = useChats();
 
   const handleNewChat = useCallback(() => {
     router.push("/chat");
