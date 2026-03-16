@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-forest-50: #f2f7f2;
+  --color-forest-100: #e0ede0;
+  --color-forest-200: #c2dac3;
+  --color-forest-300: #97c099;
+  --color-forest-400: #67a16a;
+  --color-forest-500: #4a8a4d;
+  --color-forest-600: #3d6b3f;
+  --color-forest-700: #325534;
+  --color-forest-800: #2a462b;
+  --color-forest-900: #233b24;
+  --color-forest-950: #122013;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @apply bg-white dark:bg-stone-950 text-stone-900 dark:text-stone-100;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-stone-300 dark:bg-stone-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-stone-400 dark:bg-stone-600;
+}
