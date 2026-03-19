@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Plus, Trash2, Pencil, Check, X, MessageSquare } from "lucide-react";
-import { AshTree } from "@/components/ui/AshTree";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { Spinner } from "@/components/ui/Spinner";
 import type { Chat } from "@/lib/types";
@@ -62,7 +62,14 @@ export function ChatSidebar({
     <aside className="flex flex-col w-[85vw] max-w-72 sm:w-72 h-full bg-stone-50 dark:bg-stone-950 border-r border-stone-200 dark:border-stone-800">
       {/* Header */}
       <div className="flex items-center gap-3 px-3 py-4 sm:px-4 sm:py-5 border-b border-stone-200 dark:border-stone-800">
-        <AshTree className="w-8 h-11 flex-shrink-0" />
+        <Image
+          src="/logo.png"
+          alt="ЯсеньИИ logo"
+          width={32}
+          height={44}
+          className="w-8 h-11 shrink-0 object-contain"
+          priority
+        />
         <div className="flex-1 min-w-0">
           <h1 className="text-base font-semibold text-stone-800 dark:text-stone-100 truncate">
             ЯсеньИИ
@@ -114,7 +121,7 @@ export function ChatSidebar({
               >
                 <MessageSquare
                   size={14}
-                  className="flex-shrink-0 text-stone-400 dark:text-stone-500"
+                  className="shrink-0 text-stone-400 dark:text-stone-500"
                 />
 
                 {isEditing ? (
@@ -152,7 +159,7 @@ export function ChatSidebar({
                 )}
 
                 {!isEditing && (
-                  <div className="flex-shrink-0 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="shrink-0 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button
                       onClick={() => startEditing(chat)}
                       className="p-1 rounded text-stone-400 hover:text-stone-600 dark:hover:text-stone-300 transition-colors"

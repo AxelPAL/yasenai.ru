@@ -5,7 +5,11 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 export const metadata: Metadata = {
   title: "ЯсеньИИ — AI-ассистент",
   description: "Умный AI-ассистент на базе передовых языковых моделей",
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    shortcut: [],
+    apple: [],
+  },
 };
 
 export const viewport: Viewport = {

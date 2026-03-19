@@ -56,7 +56,7 @@ export function ChatInput({ onSend, isStreaming, onAbort, disabled }: ChatInputP
             placeholder="Напишите сообщение... (Enter — отправить, Shift+Enter — новая строка)"
             rows={1}
             disabled={disabled}
-            className="flex-1 bg-transparent resize-none outline-none text-sm text-stone-800 dark:text-stone-100 placeholder-stone-400 dark:placeholder-stone-500 leading-relaxed min-h-[24px] max-h-[200px]"
+            className="flex-1 bg-transparent resize-none overflow-y-hidden outline-none text-sm text-stone-800 dark:text-stone-100 placeholder-stone-400 dark:placeholder-stone-500 leading-relaxed min-h-[24px] max-h-[200px]"
           />
           <button
             onClick={isStreaming ? onAbort : handleSend}
