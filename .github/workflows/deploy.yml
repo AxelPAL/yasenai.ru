@@ -43,11 +43,6 @@ jobs:
           ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} -p${{ secrets.DEPLOY_PORT }} \
             "mkdir -p ${{ secrets.DEPLOY_PATH }}"
 
-      - name: Copy docker-compose.yml
-        run: |
-          scp -P${{ secrets.DEPLOY_PORT }} docker-compose.yml \
-            ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/docker-compose.yml
-
       - name: Pull image and restart
         run: |
           ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} -p${{ secrets.DEPLOY_PORT }} \
