@@ -107,8 +107,9 @@ export function ChatWindow({ chat, onChatCreated }: ChatWindowProps) {
   const isEmpty = messages.length === 0 && !isStreaming;
 
   return (
-    <div className="flex flex-col h-full">
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-6">
+    // flex-1 ensures the composer stays pinned to the bottom in the page shell
+    <div className="flex flex-col h-full min-h-0">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto px-3 sm:px-4 py-4 sm:py-6">
         {isEmpty ? (
           <EmptyChat />
         ) : (

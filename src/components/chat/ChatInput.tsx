@@ -42,9 +42,11 @@ export function ChatInput({ onSend, isStreaming, onAbort, disabled }: ChatInputP
   }, []);
 
   return (
-    <div className="border-t border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-950 p-4">
+    <div
+      className="border-t border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-950 px-3 sm:px-4 pt-3 sm:pt-4 pb-[calc(12px+env(safe-area-inset-bottom))]"
+    >
       <div className="max-w-3xl mx-auto">
-        <div className="flex items-center gap-3 bg-stone-100 dark:bg-stone-900 rounded-2xl px-4 py-3 border border-stone-200 dark:border-stone-700 focus-within:border-forest-400 dark:focus-within:border-forest-500 transition-colors">
+        <div className="flex items-center gap-3 bg-stone-100 dark:bg-stone-900 rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 border border-stone-200 dark:border-stone-700 focus-within:border-forest-400 dark:focus-within:border-forest-500 transition-colors">
           <textarea
             ref={textareaRef}
             value={text}
@@ -59,7 +61,7 @@ export function ChatInput({ onSend, isStreaming, onAbort, disabled }: ChatInputP
           <button
             onClick={isStreaming ? onAbort : handleSend}
             disabled={!isStreaming && (!text.trim() || disabled)}
-            className={`flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-all ${
+            className={`flex-shrink-0 min-w-[44px] min-h-[44px] w-10 h-10 rounded-2xl flex items-center justify-center transition-all ${
               isStreaming
                 ? "bg-red-500 hover:bg-red-600 text-white"
                 : text.trim() && !disabled

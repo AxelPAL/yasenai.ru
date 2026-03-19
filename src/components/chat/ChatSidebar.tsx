@@ -59,9 +59,9 @@ export function ChatSidebar({
   }, []);
 
   return (
-    <aside className="flex flex-col w-72 h-full bg-stone-50 dark:bg-stone-950 border-r border-stone-200 dark:border-stone-800">
+    <aside className="flex flex-col w-[85vw] max-w-72 sm:w-72 h-full bg-stone-50 dark:bg-stone-950 border-r border-stone-200 dark:border-stone-800">
       {/* Header */}
-      <div className="flex items-center gap-3 px-4 py-5 border-b border-stone-200 dark:border-stone-800">
+      <div className="flex items-center gap-3 px-3 py-4 sm:px-4 sm:py-5 border-b border-stone-200 dark:border-stone-800">
         <AshTree className="w-8 h-11 flex-shrink-0" />
         <div className="flex-1 min-w-0">
           <h1 className="text-base font-semibold text-stone-800 dark:text-stone-100 truncate">
@@ -69,11 +69,13 @@ export function ChatSidebar({
           </h1>
           <p className="text-xs text-stone-400 dark:text-stone-500">Спроси у Ясеня</p>
         </div>
-        <ThemeToggle />
+        <div className="hidden sm:block">
+          <ThemeToggle />
+        </div>
       </div>
 
       {/* New chat button */}
-      <div className="px-3 py-3">
+      <div className="px-3 py-3 hidden sm:block">
         <button
           onClick={onNewChat}
           className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors group"
