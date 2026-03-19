@@ -11,8 +11,8 @@ export async function DELETE(_request: NextRequest, { params }: RouteParams) {
     await deleteMessage(messageId);
 
     return new NextResponse(null, { status: 204 });
-  } catch (error) {
-    console.error("DELETE /api/messages/[id] error:", error);
+  } catch {
+    console.error("DELETE /api/messages/[id] error");
     return NextResponse.json({ error: "Failed to delete message" }, { status: 500 });
   }
 }

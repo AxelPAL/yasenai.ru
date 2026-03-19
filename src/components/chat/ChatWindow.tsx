@@ -89,8 +89,8 @@ export function ChatWindow({ chat, onChatCreated }: ChatWindowProps) {
           const newChat = await res.json();
           targetChatId = newChat.id;
           onChatCreated?.(newChat.id);
-        } catch (err) {
-          console.error("Pre-create chat error:", err);
+        } catch {
+          console.error("Pre-create chat error");
           return;
         }
       }

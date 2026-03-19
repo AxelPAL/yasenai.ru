@@ -34,8 +34,8 @@ export async function DELETE(_request: NextRequest, { params }: RouteParams) {
     await session.save();
 
     return new NextResponse(null, { status: 204 });
-  } catch (error) {
-    console.error("DELETE /api/chats/[id] error:", error);
+  } catch {
+    console.error("DELETE /api/chats/[id] error");
     return NextResponse.json({ error: "Failed to delete chat" }, { status: 500 });
   }
 }
@@ -54,8 +54,8 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     await updateChat(chatId, body);
 
     return new NextResponse(null, { status: 204 });
-  } catch (error) {
-    console.error("PATCH /api/chats/[id] error:", error);
+  } catch {
+    console.error("PATCH /api/chats/[id] error");
     return NextResponse.json({ error: "Failed to update chat" }, { status: 500 });
   }
 }

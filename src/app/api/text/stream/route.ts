@@ -48,8 +48,8 @@ export async function POST(request: NextRequest) {
         Connection: "keep-alive",
       },
     });
-  } catch (error) {
-    console.error("POST /api/text/stream error:", error);
+  } catch {
+    console.error("POST /api/text/stream error");
     return NextResponse.json({ error: "Failed to process request" }, { status: 500 });
   }
 }

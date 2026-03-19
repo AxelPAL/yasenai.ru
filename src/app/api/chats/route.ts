@@ -20,8 +20,8 @@ export async function GET() {
     const sessionChats = allChats.filter((chat) => sessionChatIds.has(chat.id));
 
     return NextResponse.json(sessionChats);
-  } catch (error) {
-    console.error("GET /api/chats error:", error);
+  } catch {
+    console.error("GET /api/chats error");
     return NextResponse.json({ error: "Failed to fetch chats" }, { status: 500 });
   }
 }
@@ -59,8 +59,8 @@ export async function POST(request: NextRequest) {
     await session.save();
 
     return NextResponse.json(chat, { status: 201 });
-  } catch (error) {
-    console.error("POST /api/chats error:", error);
+  } catch {
+    console.error("POST /api/chats error");
     return NextResponse.json({ error: "Failed to create chat" }, { status: 500 });
   }
 }
